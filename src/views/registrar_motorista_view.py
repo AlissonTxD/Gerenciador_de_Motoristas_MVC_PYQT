@@ -11,7 +11,7 @@ class RegistradorDePessoasView:
         tipo = input("Tipo do Motorista: ")
 
         nova_informacao = {
-            "nome": nome,"placa":placa,"tipo":tipo
+            "name": nome,"plate":placa,"type":tipo
         }
         return nova_informacao
 
@@ -20,11 +20,10 @@ class RegistradorDePessoasView:
         mensagem_concluido = f"""
             Registro Concluido Com Sucesso!
             Tipo: {message["type"]}
-            Registro: {message["count"]}
             Infos:
-                Nome: {message["attributes"]["nome"]} 
-                Placa: {message["attributes"]["placa"]} 
-                Tipo: {message["attributes"]["tipo"]}
+                Nome: {message["attributes"]["name"]} 
+                Placa: {message["attributes"]["plate"]} 
+                Tipo: {message["attributes"]["type"]}
         """
         print(mensagem_concluido)
 

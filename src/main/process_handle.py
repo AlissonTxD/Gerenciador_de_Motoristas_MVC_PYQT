@@ -1,13 +1,14 @@
 from .constructor.tela_inicial_process import tela_inicial_process
-from .constructor.buscar_nome_constructor import buscar_nome_constructor
-from .constructor.buscar_placa_constructor import buscar_placa_constructor
-from .constructor.registrar_constructor import registrar_pessoa
-
+from .constructor.buscar_motorista_constructor import procurador_de_motorista_constructor
+from .constructor.registrar_motorista_constructor import registrar_pessoa_constructor
+import os
 def inciar() -> None:
     while True:
         comando = tela_inicial_process()
-        if comando == "1": buscar_nome_constructor()
-        elif comando == "2": buscar_placa_constructor()
-        elif comando == "3": registrar_pessoa()
+        if comando == "1": procurador_de_motorista_constructor("name")
+        elif comando == "2": procurador_de_motorista_constructor("plate")
+        elif comando == "3": registrar_pessoa_constructor()
         elif comando == "5": exit()
-        else: print("Comando Não Encontrado")
+        else:
+            os.system("cls||clear")
+            print("Comando Não Encontrado\n")
