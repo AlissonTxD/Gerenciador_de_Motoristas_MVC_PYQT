@@ -18,12 +18,16 @@ class RepositorioMotoristas:
             return motoristas_encontrados
         else:
             return None
-    
-    def procurar_por_placa(self, placa : str) -> Dict:
+        
+    def verificar_disponibilidade(self, informacao : Dict) -> Dict:
         for motorista in self.data:
-            if motorista["plate"] == placa:
-                return motorista
-        return None
+            if motorista["name"] == informacao["name"]:
+                return {"exists":True,"message": f"Este Nome Já Esta Cadastrado\nNome: {motorista["name"]}\nPlaca: {motorista["plate"]}"}
+            elif motorista["plate"] == informacao["plate"]:
+                return {"exists":True,"message": f"Esta Placa Já Esta Cadastrada\nNome: {motorista["name"]}\nPlaca: {motorista["plate"]}"}
+        return{"exists":False}
+
+
 
     def __open_json(self) -> list:
         with open(PATH, "r") as fp:

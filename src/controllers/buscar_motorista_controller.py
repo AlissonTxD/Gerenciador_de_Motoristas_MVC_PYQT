@@ -9,12 +9,15 @@ class BuscarMotorista:
             response = self.__format_response(motoristas)
             return {"success": True, "message": response}
         except Exception as exception:
-            return {"success": False, "error": str(exception)}
+            return {"success": False, "error": f"Erro: {str(exception)}"}
 
     def __validate_fields(self,informacao_busca: Dict):
-        if informacao_busca["tipo"] == "name" and not isinstance(informacao_busca["information"],str):
+        is_name = informacao_busca["tipo"] == "name"
+        is_plate = informacao_busca["tipo"] == "plate"
+        is_vazio = len(informacao_busca["information"]) < 1
+        if is_name and not isinstance(informacao_busca["information"],str) or is_name and is_vazio:
             raise Exception("Campo Nome Invalido!")
-        elif informacao_busca["tipo"] == "plate" and not isinstance(informacao_busca["information"],str):
+        elif is_plate and not isinstance(informacao_busca["information"],str) or is_plate and is_vazio:
             raise Exception("Campo Placa Invalido!")
         
     def __procurar_motorista(self, informacao_busca: Dict) -> Dict:
@@ -25,17 +28,12 @@ class BuscarMotorista:
         else:
             raise Exception('Motorista Não Encontrado')
 
-    def __format_response(self, motorista: any) -> Dict:
-        formated_motoristas = []
+    def __format_response(self, motoristas: any) -> Dict:
+        formated_motoristas = ""
         ctd = 1
-        for motorista in motorista:
-            form = {
-                "name": motorista["name"],
-                "plate": motorista["plate"],
-                "type": motorista["type"],
-                "num": ctd
-            }
-            formated_motoristas.append(form)
+        for motorista in motoristas:
+            texto = f"Nº{ctd} Nome: {motorista["name"]}, Placa: {motorista["plate"]}, Tipo: {motorista["type"]}\n"
+            formated_motoristas += texto
             ctd += 1
         return formated_motoristas
         

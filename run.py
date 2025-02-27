@@ -1,4 +1,8 @@
-from src.main.process_handle import inciar
+from src.views.gui_view import gui_clash
+from PyQt5.QtWidgets import QApplication
+import sys
 
 if __name__ == "__main__":
-    inciar()
+    app = QApplication(sys.argv)
+    clashwindow = gui_clash()
+    app.exec_()
