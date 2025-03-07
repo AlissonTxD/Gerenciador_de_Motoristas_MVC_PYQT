@@ -170,7 +170,7 @@ alignment: center;
                 <enum>QTabWidget::Triangular</enum>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>1</number>
                </property>
                <property name="iconSize">
                 <size>
@@ -203,10 +203,16 @@ alignment: center;
                  </property>
                  <item>
                   <widget class="QFrame" name="frame_6">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>80</height>
+                    </size>
+                   </property>
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
-                     <height>83</height>
+                     <height>80</height>
                     </size>
                    </property>
                    <property name="styleSheet">
@@ -435,26 +441,41 @@ color: #666666; /* Texto cinza escuro */
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_5">
                     <item>
-                     <widget class="QLabel" name="label_name">
+                     <widget class="QTextEdit" name="textEdit_name">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="font">
                        <font>
                         <family>Arial Black</family>
-                        <pointsize>14</pointsize>
+                        <pointsize>16</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color: rgb(252, 230, 5);
-border: 4px solid rgb(0, 0, 0);
-border-radius: 30px;
-color: rgb(0, 0, 0);</string>
+                       <string notr="true">QTextEdit {
+    text-align: center; /* Centraliza horizontalmente */
+    padding-top: 30%; /* Ajusta o padding para centralizar verticalmente */
+	background-color: rgb(252, 230, 5);
+	border: 4px solid rgb(0, 0, 0);
+	border-radius: 30px;
+	color: rgb(0, 0, 0);
+}
+</string>
                       </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <property name="readOnly">
+                       <bool>true</bool>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                      <property name="html">
+                       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial Black'; font-size:16pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>
@@ -485,6 +506,12 @@ color: rgb(0, 0, 0);</string>
                  </property>
                  <item>
                   <widget class="QFrame" name="frame_10">
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>80</height>
+                    </size>
+                   </property>
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -717,26 +744,41 @@ color: #666666; /* Texto cinza escuro */
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_7">
                     <item>
-                     <widget class="QLabel" name="label_plate">
+                     <widget class="QTextEdit" name="textEdit_plate">
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="font">
                        <font>
                         <family>Arial Black</family>
-                        <pointsize>14</pointsize>
+                        <pointsize>16</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color: rgb(252, 230, 5);
-border: 4px solid rgb(0, 0, 0);
-border-radius: 30px;
-color: rgb(0, 0, 0);</string>
+                       <string notr="true">QTextEdit {
+    text-align: center; /* Centraliza horizontalmente */
+    padding-top: 30%; /* Ajusta o padding para centralizar verticalmente */
+	background-color: rgb(252, 230, 5);
+	border: 4px solid rgb(0, 0, 0);
+	border-radius: 30px;
+	color: rgb(0, 0, 0);
+}
+</string>
                       </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <property name="readOnly">
+                       <bool>true</bool>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                      <property name="html">
+                       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial Black'; font-size:16pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                       </property>
                      </widget>
                     </item>

@@ -1,6 +1,6 @@
 from src.controllers.buscar_motorista_controller import BuscarMotorista
 from src.controllers.registrar_motorista_controller import RegistradorDePessoasController
-from PyQt5.QtWidgets import QMainWindow, QLineEdit, QLabel, QPushButton, QApplication
+from PyQt5.QtWidgets import QMainWindow, QLineEdit, QLabel, QPushButton, QTextEdit
 from PyQt5 import uic
 from src.utils import resource_path
 
@@ -23,16 +23,16 @@ class gui_clash(QMainWindow):
         # Definindo widgets dentro da aba buscar nome
         self.input_name = self.findChild(
             QLineEdit, "input_name")
-        self.label_name = self.aba_nome.findChild(
-            QLabel, "label_name")
+        self.textedit_name = self.aba_nome.findChild(
+            QTextEdit, "textEdit_name")
         self.procurar_nome_btn = self.aba_nome.findChild(
             QPushButton, "procurar_nome_btn")
         
         # Definindo widgets dentro da aba placa
         self.input_plate = self.aba_placa.findChild(
             QLineEdit, "input_plate")
-        self.label_plate = self.aba_placa.findChild(
-            QLabel, "label_plate")
+        self.textedit_plate = self.aba_placa.findChild(
+            QTextEdit, "textEdit_plate")
         self.procurar_placa_btn = self.aba_placa.findChild(
             QPushButton, "procurar_placa_btn")
         
@@ -50,9 +50,9 @@ class gui_clash(QMainWindow):
         
         # Conectar o botão ao slot
         self.procurar_nome_btn.clicked.connect(
-            lambda: self.__procurar_motorista("name", self.input_name, self.label_name))
+            lambda: self.__procurar_motorista("name", self.input_name, self.textedit_name))
         self.procurar_placa_btn.clicked.connect(
-            lambda: self.__procurar_motorista("plate", self.input_plate, self.label_plate))
+            lambda: self.__procurar_motorista("plate", self.input_plate, self.textedit_plate))
         
         self.register_btn.clicked.connect(self.__registrar_motorista)
 
