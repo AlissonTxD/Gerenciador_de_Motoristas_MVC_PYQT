@@ -5,8 +5,10 @@ PATH = "src/models/repository/motoristas.json"
 
 class RepositorioMotoristas:
     def __init__(self) -> None:
-        self.data = self.__open_json()
-
+        try:
+            self.data = self.__open_json()
+        except:
+            raise Exception("DataBase inexistente")
     def registrar(
             self,
             motorista: Dict) -> None:
