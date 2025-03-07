@@ -15,13 +15,16 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../midia/logo/icone.ico</normaloff>../../midia/logo/icone.ico</iconset>
+    <normaloff>../midia/logo/icone.ico</normaloff>../midia/logo/icone.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(132, 6, 23);</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">

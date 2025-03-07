@@ -2,10 +2,9 @@ from src.controllers.buscar_motorista_controller import BuscarMotorista
 from src.controllers.registrar_motorista_controller import RegistradorDePessoasController
 from PyQt5.QtWidgets import QMainWindow, QLineEdit, QLabel, QPushButton, QApplication
 from PyQt5 import uic
-import sys
-import time
+from src.utils import resource_path
 
-UI_PATH = "src/views/gui_main.ui"  # Path do ui
+UI_PATH = resource_path("src/views/gui_main.ui")  # Path do ui
 
 
 class gui_clash(QMainWindow):

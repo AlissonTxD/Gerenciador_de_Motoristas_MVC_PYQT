@@ -1,6 +1,6 @@
 from typing import Dict
 import json
-PATH = "src/models/repository/motoristas.json"
+PATH = "motoristas.json"
 
 
 class RepositorioMotoristas:
@@ -8,7 +8,9 @@ class RepositorioMotoristas:
         try:
             self.data = self.__open_json()
         except:
-            raise Exception("DataBase inexistente")
+            with open(PATH, 'w') as fp:
+                json.dump([], fp)
+            self.data = self.__open_json()
     def registrar(
             self,
             motorista: Dict) -> None:
