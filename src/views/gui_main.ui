@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>925</width>
+    <width>964</width>
     <height>708</height>
    </rect>
   </property>
@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../midia/logo/icone.ico</normaloff>../midia/logo/icone.ico</iconset>
+    <normaloff>../../../../../.designer/midia/logo/icone.ico</normaloff>../../../../../.designer/midia/logo/icone.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(132, 6, 23);</string>
@@ -93,7 +93,7 @@ background-color: rgb(132, 6, 23);
            <widget class="QFrame" name="tab_frame">
             <property name="maximumSize">
              <size>
-              <width>875</width>
+              <width>920</width>
               <height>16777215</height>
              </size>
             </property>
@@ -139,7 +139,6 @@ background-color: rgb(132, 6, 23);
                 <string notr="true">QTabBar::tab {
     border: 5px solid black;
     padding: 10px;
-    font-size: 14px;
     color: black;
 border: 4px solid black;
 }
@@ -170,7 +169,7 @@ alignment: center;
                 <enum>QTabWidget::Triangular</enum>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>3</number>
                </property>
                <property name="iconSize">
                 <size>
@@ -179,7 +178,7 @@ alignment: center;
                 </size>
                </property>
                <property name="tabBarAutoHide">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <widget class="QWidget" name="tab_buscar_nome">
                 <attribute name="title">
@@ -1132,6 +1131,396 @@ color: rgb(0, 0, 0);</string>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
                       </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="tab_deletar">
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <attribute name="title">
+                 <string>Deletar Motorista</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_14">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="frame_17">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>83</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(132, 6, 23);</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>8</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="label_4">
+                      <property name="maximumSize">
+                       <size>
+                        <width>450</width>
+                        <height>80</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Arial Black</family>
+                        <pointsize>14</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(252, 230, 5);
+border: 4px solid rgb(0, 0, 0);
+border-radius: 30px;
+color: rgb(0, 0, 0);</string>
+                      </property>
+                      <property name="text">
+                       <string>Deletar Motorista</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_18">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>500</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(132, 6, 23);</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="0">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="frame_19">
+                      <property name="maximumSize">
+                       <size>
+                        <width>500</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(132, 6, 23);</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_12">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QLineEdit" name="input_type_register_2">
+                         <property name="font">
+                          <font>
+                           <family>Arial Black</family>
+                           <pointsize>12</pointsize>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QLineEdit {
+border: 2px solid rgb(45, 45, 45);
+border-radius: 10px;
+padding: 15px;
+background-color: rgb(104, 4, 19);
+}
+
+QLineEdit:hover {
+border: 2px solid rgb(45, 45, 45);
+background-color: rgb(114, 14, 29);
+}
+
+QLineEdit:focus {
+border: 2px solid rgb(252, 230, 5);
+background-color: rgb(114, 14, 29);
+color: rgb(255, 255, 255)
+}
+</string>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Nome do Motorista a ser deletado</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QPushButton" name="register_btn_2">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>55</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Arial Black</family>
+                           <pointsize>16</pointsize>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QPushButton{
+background-color: rgb(104, 4, 19);
+border: 2px solid rgb(67, 2, 12);
+border-radius: 10px;
+color: rgb(255, 255, 255);
+}
+
+
+QPushButton:hover{
+background-color: rgb(114, 4, 19);
+border: 2px solid rgb(77, 12, 22);
+}
+
+QPushButton:pressed{
+background-color: rgb(252, 230, 5);
+border: 2px solid rgb(57, 0, 2);
+color: rgb(0, 0, 0)
+}
+
+QPushButton:disabled {
+background-color: #cccccc; /* Cinza */
+ border: 2px solid #999999;
+color: #666666; /* Texto cinza escuro */
+}
+</string>
+                         </property>
+                         <property name="text">
+                          <string>Verificar</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_register_2">
+                   <property name="font">
+                    <font>
+                     <family>Arial Black</family>
+                     <pointsize>14</pointsize>
+                     <weight>75</weight>
+                     <bold>true</bold>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(252, 230, 5);
+border: 4px solid rgb(0, 0, 0);
+border-radius: 30px;
+color: rgb(0, 0, 0);</string>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_20">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>500</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">background-color: rgb(132, 6, 23);</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="0">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>0</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QFrame" name="frame_21">
+                      <property name="maximumSize">
+                       <size>
+                        <width>500</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(132, 6, 23);</string>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::StyledPanel</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <layout class="QVBoxLayout" name="verticalLayout_13">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QPushButton" name="register_btn_3">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>55</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <family>Arial Black</family>
+                           <pointsize>16</pointsize>
+                           <weight>75</weight>
+                           <bold>true</bold>
+                          </font>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QPushButton{
+background-color: rgb(104, 4, 19);
+border: 2px solid rgb(67, 2, 12);
+border-radius: 10px;
+color: rgb(255, 0, 0);
+}
+
+
+QPushButton:hover{
+background-color: rgb(114, 4, 19);
+border: 2px solid rgb(77, 12, 22);
+}
+
+QPushButton:pressed{
+background-color: rgb(252, 230, 5);
+border: 2px solid rgb(57, 0, 2);
+color: rgb(0, 0, 0)
+}
+
+QPushButton:disabled {
+background-color: #cccccc;
+ border: 2px solid #999999;
+color: rgb(255, 0, 0);
+}
+</string>
+                         </property>
+                         <property name="text">
+                          <string>Deletar</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </item>
                    </layout>
