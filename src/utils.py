@@ -4,7 +4,7 @@ import sys
 #run
 #pyinstaller --onefile --noconsole --icon "C:\Users\omiga\Desktop\mvc_cadastro_motorista\src\midia\logo\icone.ico" --add-data "C:\Users\omiga\Desktop\mvc_cadastro_motorista\src;src/."  "C:\Users\omiga\Desktop\mvc_cadastro_motorista\run.py"
 
-def resource_path(relative_path):
+def resource_path(relative_path) -> str:
     """
     Retorna o caminho absoluto para um recurso, compatível tanto com desenvolvimento
     local quanto com a execução de um aplicativo empacotado pelo PyInstaller.
@@ -17,6 +17,7 @@ def resource_path(relative_path):
     desenvolvimento local), o caminho base será definido como o diretório atual.
 
     Outputs:
+    String:
     -O caminho absoluto para o recurso.
     """
     try:

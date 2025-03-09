@@ -1,5 +1,11 @@
 from typing import Dict
 import json
+from threading import Thread
+from playsound import playsound
+
+from src.utils import resource_path
+
+PATH_AUDIO = resource_path("src/midia/mp3/genivaldo_vagabundo.mp3")
 PATH = "motoristas.json"
 
 
@@ -20,6 +26,12 @@ class RepositorioMotoristas:
     def procurar_motorista(
             self,
             informacao_busca: str) -> list:
+        if informacao_busca["information"].upper() == "ALL":
+            return self.data
+        if informacao_busca["information"].upper() == "GENIVALDO":
+            thread_audio = Thread(target=lambda: playsound(PATH_AUDIO), daemon=True)
+            thread_audio.start()
+        
         motoristas_encontrados = []
 
         for motorista in self.data:
@@ -49,5 +61,6 @@ class RepositorioMotoristas:
     def __save_json(
             self,
             obj: any) -> None:
+        lista_organizada = sorted(obj,key=lambda motorista: motorista["name"])
         with open(PATH, 'w') as fp:
-            json.dump(obj, fp, indent=2)
+            json.dump(lista_organizada, fp, indent=2)
