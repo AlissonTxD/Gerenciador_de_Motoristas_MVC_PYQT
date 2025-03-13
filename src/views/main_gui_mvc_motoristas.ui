@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../.designer/midia/logo/icone.ico</normaloff>../../../../../.designer/midia/logo/icone.ico</iconset>
+    <normaloff>../../../../../.src/midia/logo/icone.ico</normaloff>../../../../../.src/midia/logo/icone.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(132, 6, 23);</string>
@@ -26,7 +26,7 @@
   <property name="animated">
    <bool>true</bool>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="MainWidget">
    <property name="styleSheet">
     <string notr="true"/>
    </property>
@@ -123,7 +123,7 @@ background-color: rgb(132, 6, 23);
               <number>0</number>
              </property>
              <item>
-              <widget class="QTabWidget" name="tabWidget">
+              <widget class="QTabWidget" name="tabwidget_main">
                <property name="font">
                 <font>
                  <family>Arial Black</family>
@@ -180,7 +180,7 @@ alignment: center;
                <property name="tabBarAutoHide">
                 <bool>true</bool>
                </property>
-               <widget class="QWidget" name="tab_buscar_nome">
+               <widget class="QWidget" name="tab_name_search">
                 <attribute name="title">
                  <string>Buscar Motorista por nome</string>
                 </attribute>
@@ -201,7 +201,7 @@ alignment: center;
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QFrame" name="frame_6">
+                  <widget class="QFrame" name="frame_title_name">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -240,7 +240,7 @@ alignment: center;
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="label">
+                     <widget class="QLabel" name="title_name">
                       <property name="maximumSize">
                        <size>
                         <width>450</width>
@@ -273,7 +273,7 @@ color: rgb(0, 0, 0);</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_7">
+                  <widget class="QFrame" name="frame_inputs_name_back">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -306,7 +306,7 @@ color: rgb(0, 0, 0);</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QFrame" name="frame_9">
+                     <widget class="QFrame" name="frame_inputs_name">
                       <property name="maximumSize">
                        <size>
                         <width>500</width>
@@ -339,7 +339,7 @@ color: rgb(0, 0, 0);</string>
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLineEdit" name="input_name">
+                        <widget class="QLineEdit" name="lineedit_name_search">
                          <property name="font">
                           <font>
                            <family>Arial Black</family>
@@ -374,7 +374,7 @@ color: rgb(255, 255, 255)
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="procurar_nome_btn">
+                        <widget class="QPushButton" name="btn_name_search">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -428,7 +428,7 @@ color: #666666; /* Texto cinza escuro */
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="nome_resultado">
+                  <widget class="QFrame" name="frame_result_name">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(132, 6, 23);</string>
                    </property>
@@ -440,7 +440,7 @@ color: #666666; /* Texto cinza escuro */
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_5">
                     <item>
-                     <widget class="QTextEdit" name="textEdit_name">
+                     <widget class="QTextEdit" name="textedit_name_search">
                       <property name="maximumSize">
                        <size>
                         <width>16777215</width>
@@ -483,7 +483,7 @@ p, li { white-space: pre-wrap; }
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="tab_buscar_placa">
+               <widget class="QWidget" name="tab_plate_search">
                 <attribute name="title">
                  <string>Buscar Motorista por Placa</string>
                 </attribute>
@@ -504,7 +504,7 @@ p, li { white-space: pre-wrap; }
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QFrame" name="frame_10">
+                  <widget class="QFrame" name="frame_title_plate">
                    <property name="minimumSize">
                     <size>
                      <width>0</width>
@@ -543,7 +543,7 @@ p, li { white-space: pre-wrap; }
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="label_2">
+                     <widget class="QLabel" name="title_plate">
                       <property name="maximumSize">
                        <size>
                         <width>450</width>
@@ -576,7 +576,7 @@ color: rgb(0, 0, 0);</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_11">
+                  <widget class="QFrame" name="frame_inputs_plate_back">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -609,7 +609,7 @@ color: rgb(0, 0, 0);</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QFrame" name="frame_12">
+                     <widget class="QFrame" name="frame_inputs_plate">
                       <property name="maximumSize">
                        <size>
                         <width>500</width>
@@ -642,7 +642,7 @@ color: rgb(0, 0, 0);</string>
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLineEdit" name="input_plate">
+                        <widget class="QLineEdit" name="lineedit_plate_search">
                          <property name="font">
                           <font>
                            <family>Arial Black</family>
@@ -677,7 +677,7 @@ color: rgb(255, 255, 255)
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="procurar_placa_btn">
+                        <widget class="QPushButton" name="btn_plate_search">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -731,7 +731,7 @@ color: #666666; /* Texto cinza escuro */
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="placa_resultado">
+                  <widget class="QFrame" name="frame_result_plate">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(132, 6, 23);</string>
                    </property>
@@ -743,7 +743,7 @@ color: #666666; /* Texto cinza escuro */
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_7">
                     <item>
-                     <widget class="QTextEdit" name="textEdit_plate">
+                     <widget class="QTextEdit" name="textedit_plate_search">
                       <property name="maximumSize">
                        <size>
                         <width>16777215</width>
@@ -786,7 +786,7 @@ p, li { white-space: pre-wrap; }
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="tab_registrar">
+               <widget class="QWidget" name="tab_driver_register">
                 <attribute name="title">
                  <string>Registrar Motorista</string>
                 </attribute>
@@ -807,7 +807,7 @@ p, li { white-space: pre-wrap; }
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QFrame" name="frame_14">
+                  <widget class="QFrame" name="frame_title_register">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -840,7 +840,7 @@ p, li { white-space: pre-wrap; }
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="label_3">
+                     <widget class="QLabel" name="title_register">
                       <property name="maximumSize">
                        <size>
                         <width>450</width>
@@ -873,7 +873,7 @@ color: rgb(0, 0, 0);</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_15">
+                  <widget class="QFrame" name="frame_inputs_register_back">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -906,7 +906,7 @@ color: rgb(0, 0, 0);</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QFrame" name="frame_16">
+                     <widget class="QFrame" name="frame_inputs_register">
                       <property name="maximumSize">
                        <size>
                         <width>500</width>
@@ -939,7 +939,7 @@ color: rgb(0, 0, 0);</string>
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLineEdit" name="input_name_register">
+                        <widget class="QLineEdit" name="lineedit_name_register">
                          <property name="font">
                           <font>
                            <family>Arial Black</family>
@@ -974,7 +974,7 @@ color: rgb(255, 255, 255)
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="input_plate_register">
+                        <widget class="QLineEdit" name="lineedit_plate_register">
                          <property name="font">
                           <font>
                            <family>Arial Black</family>
@@ -1009,7 +1009,7 @@ color: rgb(255, 255, 255)
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="input_type_register">
+                        <widget class="QLineEdit" name="lineedit_type_register">
                          <property name="font">
                           <font>
                            <family>Arial Black</family>
@@ -1044,7 +1044,7 @@ color: rgb(255, 255, 255)
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="register_btn">
+                        <widget class="QPushButton" name="btn_driver_register">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -1098,7 +1098,7 @@ color: #666666; /* Texto cinza escuro */
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame">
+                  <widget class="QFrame" name="frame_result_register">
                    <property name="styleSheet">
                     <string notr="true">background-color: rgb(132, 6, 23);</string>
                    </property>
@@ -1138,7 +1138,7 @@ color: rgb(0, 0, 0);</string>
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="tab_deletar">
+               <widget class="QWidget" name="tab_driver_delete">
                 <property name="styleSheet">
                  <string notr="true"/>
                 </property>
@@ -1162,7 +1162,7 @@ color: rgb(0, 0, 0);</string>
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QFrame" name="frame_17">
+                  <widget class="QFrame" name="frame_title_delete">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -1195,7 +1195,7 @@ color: rgb(0, 0, 0);</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QLabel" name="label_4">
+                     <widget class="QLabel" name="title_delete">
                       <property name="maximumSize">
                        <size>
                         <width>450</width>
@@ -1228,7 +1228,7 @@ color: rgb(0, 0, 0);</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_18">
+                  <widget class="QFrame" name="frame_inputs_delete_back">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -1261,7 +1261,7 @@ color: rgb(0, 0, 0);</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QFrame" name="frame_19">
+                     <widget class="QFrame" name="frame_inputs_delete">
                       <property name="maximumSize">
                        <size>
                         <width>500</width>
@@ -1294,7 +1294,7 @@ color: rgb(0, 0, 0);</string>
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QLineEdit" name="input_type_register_2">
+                        <widget class="QLineEdit" name="lineedit_name_delete">
                          <property name="font">
                           <font>
                            <family>Arial Black</family>
@@ -1329,7 +1329,7 @@ color: rgb(255, 255, 255)
                         </widget>
                        </item>
                        <item>
-                        <widget class="QPushButton" name="register_btn_2">
+                        <widget class="QPushButton" name="btn_verify_delete">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
@@ -1383,7 +1383,7 @@ color: #666666; /* Texto cinza escuro */
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_register_2">
+                  <widget class="QLabel" name="label_result_delete">
                    <property name="font">
                     <font>
                      <family>Arial Black</family>
@@ -1407,7 +1407,7 @@ color: rgb(0, 0, 0);</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QFrame" name="frame_20">
+                  <widget class="QFrame" name="frame_inputs2_delete_back">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -1440,7 +1440,7 @@ color: rgb(0, 0, 0);</string>
                      <number>0</number>
                     </property>
                     <item>
-                     <widget class="QFrame" name="frame_21">
+                     <widget class="QFrame" name="frame_inputs2_delete">
                       <property name="maximumSize">
                        <size>
                         <width>500</width>
@@ -1473,7 +1473,7 @@ color: rgb(0, 0, 0);</string>
                         <number>0</number>
                        </property>
                        <item>
-                        <widget class="QPushButton" name="register_btn_3">
+                        <widget class="QPushButton" name="btn_delete_delete">
                          <property name="minimumSize">
                           <size>
                            <width>0</width>
