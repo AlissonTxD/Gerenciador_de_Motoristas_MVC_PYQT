@@ -24,7 +24,21 @@ class ViewMain(QMainWindow):
         self.textedit_plate_search = self.findChild(QTextEdit, "textedit_plate_search")
 
         #aba registro
+        self.btn_driver_register = self.findChild(QPushButton, "btn_driver_register")
+        self.lineedit_name_register = self.findChild(QLineEdit, "lineedit_name_register")
+        self.lineedit_plate_register = self.findChild(QLineEdit, "lineedit_plate_register")
+        self.lineedit_type_register = self.findChild(QLineEdit, "lineedit_type_register")
+        self.label_register = self.findChild(QLabel, "label_register")
 
         #aba delete
+        self.btn_delete_delete = self.findChild(QPushButton, "btn_delete_delete")
+        self.lineedit_name_delete = self.findChild(QLineEdit, "lineedit_name_delete")
+        self.btn_verify_delete = self.findChild(QPushButton, "btn_verify_delete")
+        self.label_result_delete = self.findChild(QLabel, "label_result_delete")
+        self.btn_delete_delete.setEnabled(False)
 
         self.btn_name_search.clicked.connect(lambda: self.controller.search_by_name(self.lineedit_name_search.text()))
+        self.btn_plate_search.clicked.connect(lambda: self.controller.search_by_plate(self.lineedit_plate_search.text()))
+        self.btn_driver_register.clicked.connect(lambda: self.controller.register_driver(self.lineedit_name_register.text(),self.lineedit_plate_register.text(),self.lineedit_type_register.text()))
+        self.btn_verify_delete.clicked.connect(lambda: self.controller.verify_delete(self.lineedit_name_delete.text()))
+        self.btn_delete_delete.clicked.connect(lambda: self.controller.delete_driver(self.lineedit_name_delete.text()))
