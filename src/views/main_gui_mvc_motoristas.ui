@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../.src/midia/logo/icone.ico</normaloff>../../../../../.src/midia/logo/icone.ico</iconset>
+    <normaloff>../../../../../../../.src/midia/logo/icone.ico</normaloff>../../../../../../../.src/midia/logo/icone.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(132, 6, 23);</string>
@@ -169,7 +169,7 @@ alignment: center;
                 <enum>QTabWidget::Triangular</enum>
                </property>
                <property name="currentIndex">
-                <number>3</number>
+                <number>2</number>
                </property>
                <property name="iconSize">
                 <size>
@@ -1110,7 +1110,7 @@ color: #666666; /* Texto cinza escuro */
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_11">
                     <item>
-                     <widget class="QLabel" name="label_register">
+                     <widget class="QLabel" name="label_result_register">
                       <property name="font">
                        <font>
                         <family>Arial Black</family>

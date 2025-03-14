@@ -28,7 +28,7 @@ class ViewMain(QMainWindow):
         self.lineedit_name_register = self.findChild(QLineEdit, "lineedit_name_register")
         self.lineedit_plate_register = self.findChild(QLineEdit, "lineedit_plate_register")
         self.lineedit_type_register = self.findChild(QLineEdit, "lineedit_type_register")
-        self.label_register = self.findChild(QLabel, "label_register")
+        self.label_result_register = self.findChild(QLabel, "label_result_register")
 
         #aba delete
         self.btn_delete_delete = self.findChild(QPushButton, "btn_delete_delete")

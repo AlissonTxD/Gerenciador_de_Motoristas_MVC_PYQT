@@ -1,7 +1,9 @@
-from src.views.view_main import ViewMain
-from src.controllers.controller_main import ControllerMain
-from PyQt5.QtWidgets import QApplication
 import sys
+
+from PyQt5.QtWidgets import QApplication
+
+from src.controllers import ControllerMain
+from src.views import ViewMain
 
 def start() -> None:
     app = QApplication(sys.argv)
