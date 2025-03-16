@@ -1,5 +1,8 @@
+from typing import Dict
+
+
 class ModelDriverSearch:
-    def search(self, value: str, data: list, criteria: str):
+    def search(self, value: str, data: list, criteria: str) -> Dict:
         try:
             self.__validate_field(value)
             drivers = self.__searching(value, data, criteria)
@@ -8,11 +11,11 @@ class ModelDriverSearch:
         except Exception as exception:
             return {"success": False, "error": f"Erro: {str(exception)}"}
 
-    def __validate_field(self, field: str):
+    def __validate_field(self, field: str) -> None:
         is_empty = len(field) < 1
         if is_empty:
             raise Exception("Campo Vazio!")
-        
+
     def __searching(self, value: str, data: list, criteria: str) -> list:
         if value.upper() == "ALL":
             return data
@@ -23,8 +26,8 @@ class ModelDriverSearch:
         if driver_list:
             return driver_list
         else:
-            raise Exception('Motorista Não Encontrado')
-    
+            raise Exception("Motorista Não Encontrado")
+
     def __format_response(self, drivers: list) -> str:
         formatted_drivers = ""
         count = 1
