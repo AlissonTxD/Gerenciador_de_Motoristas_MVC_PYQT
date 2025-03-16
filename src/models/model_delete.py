@@ -9,6 +9,7 @@ class ModelDelete:
     
     def delete_driver(self, name: str, data: list):
         try:
+            self.__validate_field(name)
             driver = self.__search_exact_name(name, data)
             data.remove(driver)
             return {"success": True, "data": data}
