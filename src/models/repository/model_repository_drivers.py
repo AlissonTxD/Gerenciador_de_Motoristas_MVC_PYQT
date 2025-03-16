@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 import json
 
 PATH = "motoristas.json"
@@ -13,7 +13,7 @@ class DriversRepository:
                 json.dump([], fp)
             self.data = self.__open_json()
 
-    def get_data(self):
+    def get_data(self) -> List:
         self.__reload_data()
         return self.data
     

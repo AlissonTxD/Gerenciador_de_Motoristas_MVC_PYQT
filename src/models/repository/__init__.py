@@ -1,1 +1,1 @@
-from .repository_drivers import DriversRepository
+from .model_repository_drivers import DriversRepository
