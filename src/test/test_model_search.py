@@ -1,10 +1,11 @@
 from typing import Dict
 
 from src.models.model_search import ModelDriverSearch
-from src.test.sample_list import sample_list
+from src.test.sample_list import sample_list_returner
 
 
 model = ModelDriverSearch()
+sample_list = sample_list_returner()
 
 
 def test_search_name():

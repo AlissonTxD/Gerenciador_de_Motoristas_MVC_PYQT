@@ -1,9 +1,10 @@
 from typing import Dict
 
-from src.test.sample_list import sample_list
+from src.test.sample_list import sample_list_returner
 from src.models.model_register import ModelRegister
 
 model = ModelRegister()
+sample_list = sample_list_returner()
 
 
 def test_register():

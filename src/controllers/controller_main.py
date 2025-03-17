@@ -81,3 +81,4 @@ class ControllerMain:
             self.view.lineedit_name_delete.setText("")
         else:
             self.view.label_result_delete.setText(response["error"])
+            self.view.btn_delete_delete.setEnabled(False)

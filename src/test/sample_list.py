@@ -4,3 +4,10 @@ sample_list = [
     {"name": "ROBERTO", "plate": "GHI9012", "type": "TAXI"},
     {"name": "TESTNALDO", "plate": "KSNUIMN", "type": "TESTADOR"},
 ]
+
+def sample_list_returner() -> list:
+    new_list = []
+    for driver in sample_list:
+        new_list.append(driver)
+    return new_list
+    

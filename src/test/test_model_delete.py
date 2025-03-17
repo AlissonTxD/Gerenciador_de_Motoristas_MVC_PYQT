@@ -1,8 +1,8 @@
-from src.test.sample_list import sample_list
+from src.test.sample_list import sample_list_returner
 from src.models.model_delete import ModelDelete
 
 model = ModelDelete()
-
+sample_list = sample_list_returner()
 
 def test_verify_delete():
     response = model.verify_delete("CARLOS", sample_list)

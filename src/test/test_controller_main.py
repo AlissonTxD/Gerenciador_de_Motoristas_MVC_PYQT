@@ -1,12 +1,14 @@
 from typing import List
 
 from src.controllers import ControllerMain
-from src.test.sample_list import sample_list
+from src.test.sample_list import sample_list_returner
+
+sample_list = sample_list_returner()
 
 
 class MockWidgets:
     def __init__(self) -> None:
-        self.__text = ""
+        self.__text = "user input"
 
     def setText(self, text) -> None:
         self.__text = text
@@ -27,6 +29,15 @@ class MockLabel(MockWidgets):
     pass
 
 
+class MockPushButton(MockWidgets):
+    def __init__(self):
+        super().__init__()
+        self.status = False
+
+    def setEnabled(self, bool: bool) -> None:
+        self.status = bool
+
+
 class MockView:
     def __init__(self):
         self.lineedit_name_search = MockLineEdit()
@@ -38,6 +49,8 @@ class MockView:
         self.lineedit_plate_register = MockLineEdit()
         self.lineedit_type_register = MockLineEdit()
         self.label_result_delete = MockLabel()
+        self.btn_delete_delete = MockPushButton()
+        self.lineedit_name_delete = MockLineEdit()
 
 
 class MockRepository:
@@ -45,6 +58,9 @@ class MockRepository:
         return sample_list
 
     def register_in_json(self, driver: dict) -> None:
+        pass
+
+    def save_json(self, obj: List) -> None:
         pass
 
 
@@ -142,11 +158,58 @@ def test_register_driver_name_already_used():
 
 
 def test_register_driver_plate_already_used():
+    controller.register_driver("genivaldo", "ksnuimn", "freteiro")
     assert view.lineedit_name_register.text() == ""
     assert view.lineedit_plate_register.text() == ""
     assert view.lineedit_type_register.text() == ""
-    controller.register_driver("genivaldo", "ksnuimn", "freteiro")
     assert (
         view.label_result_register.text()
         == "Erro: Esta Placa Já Esta Cadastrada\nNome: TESTNALDO\nPlaca: KSNUIMN"
     )
+
+
+def test_verify_delete():
+    controller.verify_delete("carlos")
+    assert (
+        view.label_result_delete.text()
+        == "Motorista Encontrado!\nNome: CARLOS\nPlaca: ABC1234\nTipo: FRETEIRO"
+    )
+    assert view.btn_delete_delete.status == True
+    view.btn_delete_delete.status = False
+
+
+def test_verify_delete_empty():
+    controller.verify_delete("")
+    assert view.label_result_delete.text() == "Erro: Campo Vazio!"
+    assert view.btn_delete_delete.status == False
+
+
+def test_verify_delete_driver_not_found():
+    controller.verify_delete("non-existent")
+    assert (
+        view.label_result_delete.text()
+        == "Erro: Motorista Com Esse Exato Nome Não Encontrado"
+    )
+    assert view.btn_delete_delete.status == False
+
+
+def test_delete():
+    controller.delete_driver("carlos")
+    assert view.label_result_delete.text() == "Motorista Deletado!"
+    assert view.btn_delete_delete.status == False
+    assert view.lineedit_name_delete.text() == ""
+
+
+def test_delete_empty():
+    controller.delete_driver("")
+    assert view.label_result_delete.text() == "Erro: Campo Vazio!"
+    assert view.btn_delete_delete.status == False
+
+
+def test_delete_not_found():
+    controller.delete_driver("non-existent")
+    assert (
+        view.label_result_delete.text()
+        == "Erro: Motorista Com Esse Exato Nome Não Encontrado"
+    )
+    assert view.btn_delete_delete.status == False
