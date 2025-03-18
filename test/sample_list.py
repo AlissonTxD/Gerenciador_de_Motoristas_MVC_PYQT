@@ -5,9 +5,9 @@ sample_list = [
     {"name": "DRIVER004", "plate": "PLATE04", "type": "TYPE03"},
 ]
 
+
 def sample_list_returner() -> list:
     new_list = []
     for driver in sample_list:
         new_list.append(driver)
     return new_list
-    

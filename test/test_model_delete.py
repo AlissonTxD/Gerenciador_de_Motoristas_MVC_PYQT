@@ -4,6 +4,7 @@ from src.models.model_delete import ModelDelete
 model = ModelDelete()
 sample_list = sample_list_returner()
 
+
 def test_verify_delete():
     response = model.verify_delete("driver001", sample_list)
 

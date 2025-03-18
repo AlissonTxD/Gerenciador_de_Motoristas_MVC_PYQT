@@ -16,14 +16,15 @@ class MockWidget:
 
     def text(self) -> str:
         return self.__text
-    
+
     def setEnabled(self, bool: bool) -> None:
         self.status = bool
+
 
 class MockView:
     def __init__(self):
         self.reload()
-        
+
     def reload(self):
         self.lineedit_search = MockWidget()
         self.textedit_search = MockWidget()
@@ -62,7 +63,7 @@ def test_controller_main_search_by_name_driver001():
 
 
 def test_controller_main_search_by_name_empty():
-    controller.search("name","")
+    controller.search("name", "")
     assert view.lineedit_search.text() == ""
     assert view.textedit_search.text() == "Erro: Campo Vazio!"
 

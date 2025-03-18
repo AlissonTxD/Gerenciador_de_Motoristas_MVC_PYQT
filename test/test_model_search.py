@@ -11,8 +11,15 @@ sample_list = sample_list_returner()
 def test_search_name_driver001():
     response = model.search("DRIVER001", sample_list, "name")
     assert response["success"] == True
+    assert response["message"] == "Nº1 Nome: DRIVER001, Placa: PLATE01, Tipo: TYPE01\n"
+
+
+def test_search_all():
+    response = model.search("all", sample_list, "name")
+    assert response["success"] == True
     assert (
-        response["message"] == "Nº1 Nome: DRIVER001, Placa: PLATE01, Tipo: TYPE01\n"
+        response["message"]
+        == "Nº1 Nome: DRIVER001, Placa: PLATE01, Tipo: TYPE01\nNº2 Nome: DRIVER002, Placa: PLATE02, Tipo: TYPE01\nNº3 Nome: DRIVER003, Placa: PLATE03, Tipo: TYPE02\nNº4 Nome: DRIVER004, Placa: PLATE04, Tipo: TYPE03\n"
     )
 
 
@@ -31,9 +38,7 @@ def test_search_name_empty():
 def test_search_plate_plate_01():
     response = model.search("plate01", sample_list, "plate")
     assert response["success"] == True
-    assert (
-        response["message"] == "Nº1 Nome: DRIVER001, Placa: PLATE01, Tipo: TYPE01\n"
-    )
+    assert response["message"] == "Nº1 Nome: DRIVER001, Placa: PLATE01, Tipo: TYPE01\n"
 
 
 def test_search_plate_non_existent():
@@ -51,7 +56,10 @@ def test_search_plate_empty():
 def test_search_type_type01():
     response = model.search("type01", sample_list, "type")
     assert response["success"] == True
-    assert response["message"] == "Nº1 Nome: DRIVER001, Placa: PLATE01, Tipo: TYPE01\nNº2 Nome: DRIVER002, Placa: PLATE02, Tipo: TYPE01\n"
+    assert (
+        response["message"]
+        == "Nº1 Nome: DRIVER001, Placa: PLATE01, Tipo: TYPE01\nNº2 Nome: DRIVER002, Placa: PLATE02, Tipo: TYPE01\n"
+    )
 
 
 def test_search_type_non_existent():
