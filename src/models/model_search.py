@@ -20,6 +20,8 @@ class ModelDriverSearch:
         if value.upper() == "ALL":
             return data
         driver_list = []
+        if not data:
+            return driver_list
         for driver in data:
             if value.upper() in driver[criteria].upper():
                 driver_list.append(driver)
@@ -31,6 +33,8 @@ class ModelDriverSearch:
     def __format_response(self, drivers: list) -> str:
         formatted_drivers = ""
         count = 1
+        if not drivers:
+            return "Nenhum Motorista Cadastrado"
         for driver in drivers:
             text = f"Nº{count} Nome: {driver['name']}, Placa: {driver['plate']}, Tipo: {driver['type']}\n"
             formatted_drivers += text
