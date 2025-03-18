@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QLineEdit, QLabel, QPushButton, QTextEdit
+from PyQt5.QtWidgets import QMainWindow, QLineEdit, QLabel, QPushButton, QTextEdit, QRadioButton
 from PyQt5 import uic
 from PyQt5.QtGui import QIcon
 
@@ -14,15 +14,15 @@ class ViewMain(QMainWindow):
         self.setWindowIcon(QIcon(resource_path("src/midia/logo/icone.ico")))
         self.controller = controller
 
-        # Tab search by name
-        self.btn_name_search = self.findChild(QPushButton, "btn_name_search")
-        self.lineedit_name_search = self.findChild(QLineEdit, "lineedit_name_search")
-        self.textedit_name_search = self.findChild(QTextEdit, "textedit_name_search")
+        # Tab search
+        self.btn_search = self.findChild(QPushButton, "btn_search")
+        self.lineedit_search = self.findChild(QLineEdit, "lineedit_search")
+        self.textedit_search = self.findChild(QTextEdit, "textedit_search")
+        self.radiobtn_name = self.findChild(QRadioButton, "radiobtn_name")
+        self.radiobtn_plate = self.findChild(QRadioButton, "radiobtn_plate")
+        self.radiobtn_type = self.findChild(QRadioButton, "radiobtn_type")
 
-        # Tab search by plate
-        self.btn_plate_search = self.findChild(QPushButton, "btn_plate_search")
-        self.lineedit_plate_search = self.findChild(QLineEdit, "lineedit_plate_search")
-        self.textedit_plate_search = self.findChild(QTextEdit, "textedit_plate_search")
+        self.radiobtn_name.setChecked(True)
 
         # Tab register
         self.btn_driver_register = self.findChild(QPushButton, "btn_driver_register")
@@ -46,12 +46,8 @@ class ViewMain(QMainWindow):
         self.btn_delete_delete.setEnabled(False)
 
         # Button connection
-        self.btn_name_search.clicked.connect(
-            lambda: self.controller.search_by_name(self.lineedit_name_search.text())
-        )
-        self.btn_plate_search.clicked.connect(
-            lambda: self.controller.search_by_plate(self.lineedit_plate_search.text())
-        )
+        self.btn_search.clicked.connect(self.__search_driver)
+
         self.btn_driver_register.clicked.connect(
             lambda: self.controller.register_driver(
                 self.lineedit_name_register.text(),
@@ -59,9 +55,19 @@ class ViewMain(QMainWindow):
                 self.lineedit_type_register.text(),
             )
         )
+
         self.btn_verify_delete.clicked.connect(
             lambda: self.controller.verify_delete(self.lineedit_name_delete.text())
         )
         self.btn_delete_delete.clicked.connect(
             lambda: self.controller.delete_driver(self.lineedit_name_delete.text())
         )
+
+    def __search_driver(self):
+        if self.radiobtn_name.isChecked():
+            criteria = "name"
+        elif self.radiobtn_plate.isChecked():
+            criteria = "plate"
+        elif self.radiobtn_type.isChecked():
+            criteria = "type"
+        self.controller.search(criteria, self.lineedit_search.text())

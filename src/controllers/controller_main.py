@@ -17,27 +17,15 @@ class ControllerMain:
         self.view = view
         self.repository = DriversRepository()
 
-    def search_by_name(self, name: str) -> None:
-        if name.upper() == "GENIVALDO":
+    def search(self, criteria: str, value: str) -> None:
+        if value.upper() == "GENIVALDO":
             mp3_thread = Thread(target=lambda: playsound(MP3_GENIVALDO), daemon=True)
             mp3_thread.start()
-        self.__search("name", name)
-        self.view.lineedit_name_search.setText("")
-
-    def search_by_plate(self, plate: str) -> None:
-        self.__search("plate", plate)
-        self.view.lineedit_plate_search.setText("")
-
-    def __search(self, criteria: str, value: str) -> None:
         data = self.repository.get_data()
         search_model = ModelDriverSearch()
         response = search_model.search(value, data, criteria)
-
-        if criteria == "name":
-            textedit = self.view.textedit_name_search
-        elif criteria == "plate":
-            textedit = self.view.textedit_plate_search
-
+        textedit = self.view.textedit_search
+        self.view.lineedit_search.setText("")
         if response["success"]:
             textedit.setText(response["message"])
         else:

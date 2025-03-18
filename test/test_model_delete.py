@@ -1,22 +1,22 @@
-from src.test.sample_list import sample_list_returner
+from test.sample_list import sample_list_returner
 from src.models.model_delete import ModelDelete
 
 model = ModelDelete()
 sample_list = sample_list_returner()
 
 def test_verify_delete():
-    response = model.verify_delete("CARLOS", sample_list)
+    response = model.verify_delete("driver001", sample_list)
 
     assert response["success"] == True
     assert response["driver"] == {
-        "name": "CARLOS",
-        "plate": "ABC1234",
-        "type": "FRETEIRO",
+        "name": "DRIVER001",
+        "plate": "PLATE01",
+        "type": "TYPE01",
     }
 
 
 def test_verify_delete_name_not_found():
-    response = model.verify_delete("genivaldo", sample_list)
+    response = model.verify_delete("driver005", sample_list)
     assert response["success"] == False
     assert response["error"] == "Erro: Motorista Com Esse Exato Nome Não Encontrado"
 
@@ -28,13 +28,14 @@ def test_verify_delete_name_empty():
 
 
 def test_delete_driver():
-    response = model.delete_driver("ROBERTO", sample_list)
+    data = sample_list_returner()
+    response = model.delete_driver("DRIVER001", data)
     assert response["success"] == True
     assert len(response["data"]) == 3
 
 
 def test_delete_driver_name_not_found():
-    response = model.delete_driver("genivaldo", sample_list)
+    response = model.delete_driver("driver005", sample_list)
     assert response["success"] == False
     assert response["error"] == "Erro: Motorista Com Esse Exato Nome Não Encontrado"
 
