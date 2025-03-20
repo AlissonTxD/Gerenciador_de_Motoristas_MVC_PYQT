@@ -6,19 +6,14 @@ PATH = "motoristas.json"
 
 class DriversRepository:
     def __init__(self) -> None:
-        try:
-            self.data = self.__open_json()
-        except:
-            with open(PATH, "w") as fp:
-                json.dump([], fp)
-            self.data = self.__open_json()
+        self.data = []
 
     def get_data(self) -> List:
-        self.__reload_data()
+        self.__load_data()
         return self.data
 
     def register_in_json(self, driver: Dict) -> None:
-        self.__reload_data()
+        self.__load_data()
         self.data.append(driver)
         self.save_json(self.data)
 
@@ -27,8 +22,13 @@ class DriversRepository:
         with open(PATH, "w") as fp:
             json.dump(sorted_drivers_list, fp, indent=2)
 
-    def __reload_data(self) -> None:
-        self.data = self.__open_json()
+    def __load_data(self) -> None:
+        try:
+            self.data = self.__open_json()
+        except:
+            with open(PATH, "w") as fp:
+                json.dump([], fp)
+            self.data = self.__open_json()
 
     def __open_json(self) -> list:
         with open(PATH, "r") as fp:
