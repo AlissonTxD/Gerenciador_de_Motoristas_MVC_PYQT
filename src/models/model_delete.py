@@ -14,8 +14,7 @@ class ModelDelete:
         try:
             self.__validate_field(name)
             driver = self.__search_exact_name(name, data)
-            data.remove(driver)
-            return {"success": True, "data": data}
+            return {"success": True, "driver": driver}
         except Exception as exception:
             return {"success": False, "error": f"Erro: {str(exception)}"}
 

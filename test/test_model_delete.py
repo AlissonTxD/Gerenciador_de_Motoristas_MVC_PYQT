@@ -32,7 +32,7 @@ def test_delete_driver():
     data = sample_list_returner()
     response = model.delete_driver("DRIVER001", data)
     assert response["success"] == True
-    assert len(response["data"]) == 3
+    assert response["driver"] == {'name': 'DRIVER001', 'plate': 'PLATE01', 'type': 'TYPE01'}
 
 
 def test_delete_driver_name_not_found():

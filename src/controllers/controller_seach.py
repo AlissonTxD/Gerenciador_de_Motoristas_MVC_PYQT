@@ -9,13 +9,14 @@ from src.utils import resource_path
 
 MP3_GENIVALDO = resource_path("src/midia/mp3/genivaldo_vagabundo.mp3")
 
+
 def controller_search(criteria: str, value: str) -> None:
     repository = DriversRepository()
     view = ViewMain(None)
     if value.upper() == "GENIVALDO":
         mp3_thread = Thread(target=lambda: playsound(MP3_GENIVALDO), daemon=True)
         mp3_thread.start()
-    data = repository.get_data()
+    data = repository.get_json_data()
     search_model = ModelDriverSearch()
     response = search_model.search(value, data, criteria)
     textedit = view.textedit_search

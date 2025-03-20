@@ -1,12 +1,12 @@
-
 from src.models.repository import DriversRepository
 from src.views.view_main import ViewMain
 from src.models.model_register import ModelRegister
 
+
 def controller_register(name: str, plate: str, type: str):
     repository = DriversRepository()
     view = ViewMain()
-    data = repository.get_data()
+    data = repository.get_json_data()
     register_model = ModelRegister()
     response = register_model.register(name, plate, type, data)
     if response["success"]:
