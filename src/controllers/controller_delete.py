@@ -6,10 +6,15 @@ repository = DriversRepository()
 
 
 def controller_verify_delete_driver(name: str) -> None:
+    """Send the data recived from the view and the repository to the model and send the response back to the view
+
+    Args:
+        name (str): Name of the driver that will be checked
+    """
     view = ViewMain()
     data = repository.get_json_data()
     model_delete = ModelDelete()
-    response = model_delete.verify_delete(name, data)
+    response = model_delete.verify_for_delete(name, data)
     if response["success"]:
         view.label_result_delete.setText(
             f"Motorista Encontrado!\nNome: {response["driver"]["name"]}\nPlaca: {response["driver"]["plate"]}\nTipo: {response["driver"]["type"]}"
@@ -20,10 +25,15 @@ def controller_verify_delete_driver(name: str) -> None:
 
 
 def controller_delete_driver(name: str) -> None:
+    """Send the data recived from the view and the repository to the model and send the response back to the view
+
+    Args:
+        name (str): Name of the driver that will be deleted
+    """
     view = ViewMain()
     data = repository.get_json_data()
     model_delete = ModelDelete()
-    response = model_delete.delete_driver(name, data)
+    response = model_delete.verify_for_delete(name, data)
     if response["success"]:
         repository.delete_in_json(response["driver"])
         view.label_result_delete.setText("Motorista Deletado!")

@@ -4,6 +4,13 @@ from src.models.model_register import ModelRegister
 
 
 def controller_register(name: str, plate: str, type: str):
+    """Send the data recived from the view and the repository to the model and send the response back to the view
+
+    Args:
+        name (str): Name of the driver to be registered
+        plate (str): Plate of the drivers vehicle to be registered
+        type (str): Type of the driver to be registered
+    """
     repository = DriversRepository()
     view = ViewMain()
     data = repository.get_json_data()

@@ -11,6 +11,12 @@ MP3_GENIVALDO = resource_path("src/midia/mp3/genivaldo_vagabundo.mp3")
 
 
 def controller_search(criteria: str, value: str) -> None:
+    """Send the data recived from the view and the repository to the model and send the response back to the view
+
+    Args:
+        criteria (str): Search criteria, probably (name, plate, type)
+        value (str): Search value
+    """
     repository = DriversRepository()
     view = ViewMain(None)
     if value.upper() == "GENIVALDO":

@@ -8,8 +8,7 @@ from src.views import ViewMain
 
 def start() -> None:
     app = QApplication(sys.argv)
-    controller = ControllerMain(None)
+    controller = ControllerMain()
     view = ViewMain(controller)
-    controller.view = view
     view.show()
     app.exec_()

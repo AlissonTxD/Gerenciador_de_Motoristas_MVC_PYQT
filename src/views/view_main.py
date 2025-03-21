@@ -11,12 +11,19 @@ class ViewMain(QMainWindow):
     __instance = None
 
     def __new__(cls, *args, **kwargs):
+        """checks if this class has ever been instantiated, if it has it returns it
+        """
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
             cls.__instance.initialized = False
         return cls.__instance
 
     def __init__(self, controller: object= None):
+        """creates the instance of the class if it has not been created before
+
+        Args:
+            controller (object, ControllerMain): Main controller that will direct the information from the view to the models. Defaults to None.
+        """
         if not self.initialized:
             super(ViewMain, self).__init__()
             self.initialized = True
@@ -73,7 +80,9 @@ class ViewMain(QMainWindow):
                 lambda: self.controller.delete_driver(self.lineedit_name_delete.text())
             )
 
-    def __search_driver(self):
+    def __search_driver(self) -> None:
+        """Sets the search criteria based on which radio button is checked and send the value of the search tab to the controller
+        """
         if self.radiobtn_name.isChecked():
             criteria = "name"
         elif self.radiobtn_plate.isChecked():
