@@ -11,7 +11,7 @@ class ViewMain(QMainWindow):
     __instance = None
 
     def __new__(cls, *args, **kwargs):
-        """checks if this class has ever been instantiated, if it has it returns it
+        """Checks if this class has ever been instantiated, if it has it returns it
         """
         if cls.__instance is None:
             cls.__instance = super().__new__(cls)
@@ -19,7 +19,7 @@ class ViewMain(QMainWindow):
         return cls.__instance
 
     def __init__(self, controller: object= None):
-        """creates the instance of the class if it has not been created before
+        """Creates the instance of the class if it has not been created before
 
         Args:
             controller (object, ControllerMain): Main controller that will direct the information from the view to the models. Defaults to None.
